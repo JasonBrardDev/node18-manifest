@@ -1,0 +1,18 @@
+type: install
+name: Jason Brard Web
+id: jbweb
+
+nodes:
+    - nodeType: nginx
+    nodeGroup: bl
+    count: 1
+    cloudlets: 8
+    displayName: LoadBalancer
+
+    - image: node:18-alpine
+    count: 1
+    cloudlets: 8
+    nodeGroup: cp
+    displayName: Front
+    volumes:
+        - /var/www
